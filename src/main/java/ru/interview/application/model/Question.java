@@ -1,21 +1,21 @@
 package ru.interview.application.model;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import java.io.Serializable;
 
-@Data
-@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Builder
-public class Question {
+@Entity
+public class Question extends EntityObject implements Serializable {
 
-    @Id
-    @GeneratedValue
-    private Long id;
     private String text;
-    @OneToOne
-    private Answer answer;
+    private String answer;
     @ManyToOne
     private Topic topic;
 }
