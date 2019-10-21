@@ -1,8 +1,8 @@
-package ru.interview.application.service;
+package ru.interview.application.service.dictionary;
 
 import org.springframework.stereotype.Service;
-import ru.interview.application.model.Category;
-import ru.interview.application.model.Topic;
+import ru.interview.application.model.dictionary.Category;
+import ru.interview.application.model.dictionary.Topic;
 import ru.interview.application.repository.TopicStorage;
 
 import javax.transaction.Transactional;
@@ -22,13 +22,12 @@ public class TopicService {
         return storage.findAll();
     }
 
-    public List<Topic> create(String name, Category category) {
+    public Topic create(String name, Category category) {
         Topic topic = Topic.builder()
                 .name(name)
                 .category(category)
                 .build();
-        storage.save(topic);
-        return storage.findAll();
+        return storage.save(topic);
     }
 
     public Topic find(Long id) {

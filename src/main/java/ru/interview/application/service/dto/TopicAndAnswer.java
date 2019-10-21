@@ -1,7 +1,7 @@
 package ru.interview.application.service.dto;
 
 import lombok.*;
-import ru.interview.application.model.Topic;
+import ru.interview.application.model.dictionary.Topic;
 
 import java.io.Serializable;
 

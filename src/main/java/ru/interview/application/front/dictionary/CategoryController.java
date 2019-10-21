@@ -1,11 +1,11 @@
-package ru.interview.application.front;
+package ru.interview.application.front.dictionary;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.interview.application.model.Category;
-import ru.interview.application.service.CategoryService;
+import ru.interview.application.model.dictionary.Category;
+import ru.interview.application.service.dictionary.CategoryService;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class CategoryController {
     }
 
     @PostMapping(value = "/create")
-    public List<Category> create(String name) {
+    public Category create(String name) {
         return categoryService.create(name);
     }
 

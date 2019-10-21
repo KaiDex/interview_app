@@ -1,4 +1,4 @@
-package ru.interview.application.model;
+package ru.interview.application.model.dictionary;
 
 import lombok.*;
 
@@ -12,10 +12,9 @@ import java.io.Serializable;
 @Setter
 @Builder
 @Entity
-public class Question extends EntityObject implements Serializable {
+public class Topic extends EntityObject implements Serializable {
 
-    private String text;
-    private String answer;
+    private String name;
     @ManyToOne
-    private Topic topic;
+    private Category category;
 }

@@ -1,9 +1,9 @@
-package ru.interview.application.front;
+package ru.interview.application.front.dictionary;
 
 import org.springframework.web.bind.annotation.*;
-import ru.interview.application.model.Category;
-import ru.interview.application.model.Topic;
-import ru.interview.application.service.TopicService;
+import ru.interview.application.model.dictionary.Category;
+import ru.interview.application.model.dictionary.Topic;
+import ru.interview.application.service.dictionary.TopicService;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class TopicController {
     }
 
     @PostMapping(value = "/create")
-    public List<Topic> create(String name, @RequestBody Category category) {
+    public Topic create(String name, @RequestBody Category category) {
         return TopicService.create(name, category);
     }
 

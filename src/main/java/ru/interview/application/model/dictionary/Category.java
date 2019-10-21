@@ -1,4 +1,4 @@
-package ru.interview.application.model;
+package ru.interview.application.model.dictionary;
 
 import lombok.*;
 

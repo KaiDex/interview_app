@@ -1,39 +1,38 @@
 package ru.interview.application.service;
 
 import org.springframework.stereotype.Service;
-import ru.interview.application.model.Category;
-import ru.interview.application.repository.CategoryStorage;
+import ru.interview.application.model.Questionnaire;
+import ru.interview.application.repository.QuestionnaireStorage;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 @Transactional
-public class CategoryService {
+public class QuestionnaireService {
 
-    private final CategoryStorage storage;
+    protected final QuestionnaireStorage storage;
 
-    public CategoryService(CategoryStorage storage) {
+    public QuestionnaireService(QuestionnaireStorage storage) {
         this.storage = storage;
     }
 
-    public List<Category> getAll() {
+    public List<Questionnaire> getAll() {
         return storage.findAll();
     }
 
-    public List<Category> create(String name) {
-        Category category = Category.builder()
+    public Questionnaire create(String name) {
+        Questionnaire questionnaire = Questionnaire.builder()
                 .name(name)
                 .build();
-        storage.save(category);
-        return storage.findAll();
+        return storage.save(questionnaire);
     }
 
-    public Category find(Long id) {
+    public Questionnaire find(Long id) {
         return storage.findById(id).orElseThrow(() -> new IllegalArgumentException("Не найдена сущность с заданным id"));
     }
 
-    public Category update(Category category) {
+    public Questionnaire update(Questionnaire category) {
         return storage.save(category);
     }
 

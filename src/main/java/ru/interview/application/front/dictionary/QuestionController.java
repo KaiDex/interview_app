@@ -1,8 +1,8 @@
-package ru.interview.application.front;
+package ru.interview.application.front.dictionary;
 
 import org.springframework.web.bind.annotation.*;
-import ru.interview.application.model.Question;
-import ru.interview.application.service.QuestionService;
+import ru.interview.application.model.dictionary.Question;
+import ru.interview.application.service.dictionary.QuestionService;
 import ru.interview.application.service.dto.TopicAndAnswer;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class QuestionController {
     }
 
     @PostMapping(value = "/create")
-    public List<Question> create(String text, @RequestBody TopicAndAnswer topicAndAnswer) {
+    public Question create(String text, @RequestBody TopicAndAnswer topicAndAnswer) {
         return questionService.create(text, topicAndAnswer);
     }
 
