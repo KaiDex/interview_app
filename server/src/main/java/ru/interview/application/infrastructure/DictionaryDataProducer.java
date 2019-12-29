@@ -75,9 +75,9 @@ public class DictionaryDataProducer {
                 case TOPIC_TRANSACTIONS:
                     topicAndAnswer = TopicAndAnswer.builder()
                             .topic(topic)
-                            .answer("Как откатить результаты декларативной транзакции?")
+                            .answer("Выбросить Runtime исключение.")
                             .build();
-                    question = questionService.create("Выбросить Runtime исключение.", topicAndAnswer);
+                    question = questionService.create("Как откатить результаты декларативной транзакции?", topicAndAnswer);
                     break;
                 case TOPIC_COMPONENTS:
                     topicAndAnswer = TopicAndAnswer.builder()
