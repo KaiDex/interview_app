@@ -6,6 +6,7 @@
 
     <modules>
         <module>server</module>
+        <module>ReactInterviewApp</module>
     </modules>
 
     <parent>
